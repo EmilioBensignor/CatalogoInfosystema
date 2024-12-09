@@ -1,6 +1,5 @@
 <template>
   <main>
-    <HomeHero />
-    <HomeDestacados />
+    <h1>Productos</h1>
   </main>
 </template>
