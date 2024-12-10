@@ -3,5 +3,6 @@
     <DefaultHeader />
     <slot />
     <DefaultFooter />
+    <DefaultRights />
   </div>
 </template>

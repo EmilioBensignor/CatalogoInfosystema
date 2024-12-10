@@ -2,75 +2,21 @@
   <section class="columnAlignCenter">
     <h2>PRODUCTOS DESTACADOS</h2>
     <div class="productosContainer">
-      <article
-        v-for="(producto, index) in productos"
-        :key="index"
-        class="producto bg-white shadow-3"
-      >
-        <NuxtImg class="w-full" :src="`/images/${producto.image}.png`" :alt="producto.title" />
-        <h3>{{ producto.title }}</h3>
-        <p>{{ producto.price }}</p>
-      </article>
+      <InfoProductCard :producto="producto" v-for="(producto, index) in productos" :key="index" />
     </div>
+    <NuxtLink :to="routes.PRODUCTOS" class="primaryButton">Ver todos los productos</NuxtLink>
   </section>
 </template>
 
 <script>
+import { ROUTE_NAMES } from '~/constants/ROUTE_NAMES';
+import { productos } from '~/shared/productos';
+
 export default {
   data() {
     return {
-      productos: [
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-        {
-          image: "producto",
-          title: "Producto 1",
-          price: 100,
-        },
-      ],
+      routes: ROUTE_NAMES,
+      productos,
     };
   },
 };
@@ -79,13 +25,14 @@ export default {
 <style scoped>
 .productosContainer {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
-.producto {
-  width: 46%;
-  border-radius: 7px;
-  padding: 0.625rem;
+@media (width >=380px) {
+  .productosContainer {
+    gap: 1.25rem;
+  }
 }
 </style>
