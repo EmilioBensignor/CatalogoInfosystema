@@ -57,6 +57,11 @@ export default {
       ],
     };
   },
+  watch: {
+    $route() {
+      this.closeDrawer();
+    }
+  },
   mounted() {
     document.addEventListener("click", this.handleOutsideClick);
     document.addEventListener("keydown", this.handleKeyDown);

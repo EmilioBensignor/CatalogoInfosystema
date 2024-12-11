@@ -39,5 +39,6 @@ export default {
 
 .bannerContainer > div img {
   width: 75%;
+  max-width: 230px;
 }
 </style>

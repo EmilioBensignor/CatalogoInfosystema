@@ -34,6 +34,10 @@ export default {
   padding: 0.625rem;
 }
 
+.producto > p {
+  font-size: 0.875rem;
+}
+
 .producto > div p {
   font-size: 1rem;
 }
@@ -43,7 +47,7 @@ export default {
 }
 
 @media (width >=350px) {
-  .producto > div p:last-of-type, .producto > p {
+  .producto > div p:last-of-type {
     font-size: 0.875rem;
   }
 }
