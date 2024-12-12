@@ -1,12 +1,27 @@
 <template>
-  <section class="columnAlignCenter bg-gradient-black">
-    <div class="w-full bannerContainer rowAlignCenter">
-      <div v-for="(banner, index) in banners" :key="index" class="columnAlignCenter">
-        <div class="title bg-white">
-          <h1>COCINA</h1>
-        </div>
-        <NuxtImg src="/images/banner-hero.png" alt="Hero" />
-      </div>
+  <section class="w-full columnAlignCenter bg-gradient-black">
+    <div class="w-full bannerContainer">
+      <Carousel
+        :value="banners"
+        :numVisible="1"
+        :numScroll="1"
+        circular
+        :autoplayInterval="3000"
+        :showNavigators="false"
+        :showIndicators="true"
+      >
+        <template #item="slotProps">
+          <div class="banner columnAlignCenter">
+            <div class="title bg-white">
+              <h1>{{ slotProps.data.title }}</h1>
+            </div>
+            <NuxtImg
+              :src="`/images/${slotProps.data.img}.png`"
+              :alt="slotProps.data.alt"
+            />
+          </div>
+        </template>
+      </Carousel>
     </div>
   </section>
 </template>
@@ -18,7 +33,18 @@ export default {
       banners: [
         {
           title: "COCINA",
-          image: "/images/banner-hero.png",
+          img: "banner-hero",
+          alt: "Banner Hero",
+        },
+        {
+          title: "HOGAR",
+          img: "banner-hero",
+          alt: "Banner Hero",
+        },
+        {
+          title: "BANO",
+          img: "banner-hero",
+          alt: "Banner Hero",
         },
       ],
     };
@@ -27,18 +53,42 @@ export default {
 </script>
 
 <style scoped>
-.bannerContainer > div {
-  gap: 1.25rem;
+.bannerContainer {
+  overflow: hidden;
 }
 
-.title {
-  border-radius: 999px;
-  box-shadow: 0px 0px 1.9px 0px #00000040;
-  padding: 0.25rem 1rem;
+.banner {
+  width: 100%;
+  position: relative;
+  gap: 1.25rem;
+  padding: 3.5rem 0 0.75rem 0;
 }
 
 .bannerContainer > div img {
   width: 75%;
-  max-width: 230px;
+  max-width: 280px;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  background-color: var(--color-white);
+  transform: translateX(-50%);
+  border-radius: 999px;
+  padding: 0.25rem 1.25rem;
+}
+
+:deep(.p-carousel-indicator) {
+  width: 6px;
+  height: 6px;
+  border: 1px solid #F5F3F3;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+:deep(.p-carousel-indicator-active) {
+  background-color: #F5F3F3;
 }
 </style>

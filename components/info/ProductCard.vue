@@ -29,9 +29,14 @@ export default {
 <style scoped>
 .producto {
   width: 46.5%;
+  max-width: 175px;
   gap: 0.625rem;
   border-radius: 7px;
   padding: 0.625rem;
+}
+
+.producto > img {
+  max-width: 150px;
 }
 
 .producto > p {
