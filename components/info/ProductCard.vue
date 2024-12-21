@@ -1,5 +1,5 @@
 <template>
-  <article class="producto columnAlignCenter bg-white shadow-3">
+  <article class="producto columnAlignCenter bg-white shadow-3" @click="$emit('showDetail', producto)">
     <NuxtImg
       class="w-full"
       :src="`/images/${producto.image}.png`"
@@ -33,6 +33,7 @@ export default {
   gap: 0.625rem;
   border-radius: 7px;
   padding: 0.625rem;
+  cursor: pointer;
 }
 
 .producto > img {
