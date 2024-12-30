@@ -2,21 +2,21 @@ export const categories = [
     {
         name: "Cocina",
         route: "cocina",
-        img: "cocina.png",
+        img: "cocina",
     },
     {
         name: "Hogar",
         route: "hogar",
-        img: "hogar.png",
+        img: "hogar",
     },
     {
         name: "Jardín",
         route: "jardin",
-        img: "jardin.png",
+        img: "jardin",
     },
     {
         name: "Muebles",
         route: "muebles",
-        img: "muebles.png",
+        img: "muebles",
     },
 ];

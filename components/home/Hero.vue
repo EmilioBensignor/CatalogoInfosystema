@@ -22,7 +22,7 @@
           </div>
         </template>
       </Carousel>
-      <HomeCategories />
+      <!-- <HomeCategories /> -->
     </div>
   </section>
 </template>
@@ -92,5 +92,15 @@ export default {
 
 :deep(.p-carousel-indicator-active) {
   background-color: #F5F3F3;
+}
+
+@media (width >=660px) {
+  .banner {
+    padding: 4rem 0 0.75rem 0;
+  }
+
+  .title {
+    padding: 0.35rem 1.75rem;
+  }
 }
 </style>

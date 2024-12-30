@@ -116,7 +116,6 @@ h3 {
 }
 
 p,
-.primaryButton,
 a {
   font-size: 0.75rem;
 }
@@ -131,12 +130,12 @@ a {
 /* Dialog */
 
 .p-overlay-mask {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .p-overlay-mask .dialogDetail {
   width: 90%;
-  max-width: 600px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
@@ -154,10 +153,6 @@ a {
   height: 1rem;
 }
 
-.dialogBody {
-  gap: 0.625rem;
-}
-
 /* Buttons */
 
 .primaryButton {
@@ -165,6 +160,7 @@ a {
   border-radius: 7px;
   background: var(--color-black);
   color: var(--color-white);
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -204,5 +200,31 @@ a {
 @media (width >=380px) {
   .productosContainer {
     gap: 1.25rem;
+  }
+}
+
+@media (width >=660px) {
+  section {
+    padding: 1.25rem 2.5rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    width: 100%;
+    text-align: start;
+    font-size: 1.5rem;
+  }
+
+  p,
+  a {
+    font-size: 0.875rem;
+  }
+
+  .p-overlay-mask .dialogDetail {
+    gap: 0.75rem;
+    padding: 2.5rem;
   }
 }

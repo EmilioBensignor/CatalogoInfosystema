@@ -1,6 +1,6 @@
 <template>
   <section class="columnAlignCenter">
-    <h2>PRODUCTOS DESTACADOS</h2>
+    <h2>Productos destacados</h2>
     <div class="productosContainer">
       <InfoProductCard 
         :producto="producto" 

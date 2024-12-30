@@ -1,29 +1,15 @@
 <template>
   <header class="bg-black">
     <div class="rowCenter justify-content-center relative">
-      <button
-        class="hamburger"
-        @click="toggleDrawer"
-        aria-label="Open or close menu"
-      >
+      <button class="hamburger" @click="toggleDrawer" aria-label="Open or close menu">
         <Icon size="1.5rem" name="mingcute:menu-line" />
       </button>
       <NuxtLink :to="routes.HOME">
-        <NuxtImg
-          class="logo"
-          src="/images/Logo-Empresa.svg"
-          alt="Logo Infosystema"
-        />
+        <NuxtImg class="logo" src="/images/Logo-Empresa.svg" alt="Logo Infosystema" />
       </NuxtLink>
       <div class="menuSidebar">
-        <Drawer
-          :visible="drawerMenu"
-          :modal="true"
-          :dismissable="true"
-          :closeOnEscape="true"
-          class="column"
-          @hide="closeDrawer"
-        >
+        <Drawer :visible="drawerMenu" :modal="true" :dismissable="true" :closeOnEscape="true" class="column"
+          @hide="closeDrawer">
           <template #header>
             <button @click="closeDrawer" class="closeButton allCenter">
               <Icon name="mingcute:close-line" class="text-white" />
@@ -47,11 +33,11 @@ export default {
       routes: ROUTE_NAMES,
       menu: [
         {
-          label: "INICIO",
+          label: "Inicio",
           to: ROUTE_NAMES.HOME,
         },
         {
-          label: "PRODUCTOS",
+          label: "Productos",
           to: ROUTE_NAMES.PRODUCTOS,
         },
       ],
@@ -101,7 +87,7 @@ export default {
 
 <style>
 .p-drawer {
-  width: 55% !important;
+  width: 10rem !important;
   gap: 1.25rem;
   background: var(--color-black) !important;
   padding: 1.25rem !important;
@@ -127,7 +113,7 @@ export default {
 .navMenu a {
   color: var(--color-white);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.25rem;
   text-decoration: none;
 }
 
@@ -155,16 +141,25 @@ export default {
 .closeButton span {
   font-size: 1.5rem !important;
 }
+
+@media (width >=660px) {
+  .p-drawer {
+    width: 11.25rem !important;
+  }
+}
 </style>
 
 <style scoped>
 header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   padding: 1.25rem;
 }
 
 .hamburger {
   position: absolute;
-  left: 1.25rem;
+  left: 0;
   background: none;
   border: none;
   color: var(--color-white);
@@ -173,6 +168,19 @@ header {
 
 .logo {
   width: 5.625rem;
-  align-self: center;
+}
+
+@media (width >=660px) {
+  header {
+    padding: 1.25rem 2.5rem;
+  }
+
+  .logo {
+    width: 6.75rem;
+  }
+
+  .navMenu a {
+    font-size: 1.5rem;
+  }
 }
 </style>

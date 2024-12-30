@@ -1,13 +1,9 @@
 <template>
-    <Dialog 
-        :visible="visible" 
-        @update:visible="$emit('update:visible', $event)" 
-        modal 
-        :dismissableMask="true"
+    <Dialog :visible="visible" @update:visible="$emit('update:visible', $event)" modal :dismissableMask="true"
         class="dialogDetail">
         <div class="dialogBody columnAlignCenter">
             <NuxtImg class="w-full max-w-300" :src="`/images/${producto?.image}.png`" :alt="producto?.title" />
-            <p class="w-full dialogBig">{{ producto?.title }}</p>
+            <p class="w-full dialogBig font-bold">{{ producto?.title }}</p>
             <p class="w-full">{{ producto?.description }}</p>
             <div class="w-full rowSpaceBetween align-items-end">
                 <p class="dialogBig font-bold">
@@ -36,7 +32,12 @@ export default {
 </script>
 
 <style scoped>
+.dialogBody {
+    gap: 0.625rem;
+}
+
 .dialogBody .dialogBig {
     font-size: 1.5rem;
 }
+
 </style>
