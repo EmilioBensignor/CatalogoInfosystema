@@ -1,12 +1,12 @@
 <template>
   <section class="w-full columnAlignCenter bg-gradient-black">
-    <div class="w-full bannerContainer">
+    <div class="w-full bannerContainer columnAlignCenter">
       <Carousel
         :value="banners"
         :numVisible="1"
         :numScroll="1"
         circular
-        :autoplayInterval="3000"
+        :autoplayInterval="300000000"
         :showNavigators="false"
         :showIndicators="true"
       >
@@ -22,6 +22,7 @@
           </div>
         </template>
       </Carousel>
+      <HomeCategories />
     </div>
   </section>
 </template>
@@ -32,17 +33,17 @@ export default {
     return {
       banners: [
         {
-          title: "COCINA",
+          title: "Cocina",
           img: "banner-hero",
           alt: "Banner Hero",
         },
         {
-          title: "HOGAR",
+          title: "Hogar",
           img: "banner-hero",
           alt: "Banner Hero",
         },
         {
-          title: "BANO",
+          title: "Baño",
           img: "banner-hero",
           alt: "Banner Hero",
         },
@@ -54,6 +55,7 @@ export default {
 
 <style scoped>
 .bannerContainer {
+  gap: 2.5rem;
   overflow: hidden;
 }
 
