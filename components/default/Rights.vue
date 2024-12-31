@@ -1,6 +1,6 @@
 <template>
   <div class="bg-dark-gray">
-    <p class="text-center">We Glam 2024. All rights reserved.</p>
+    <p class="text-center">We Glam 2024. Todos los derechos reservados.</p>
   </div>
 </template>
 

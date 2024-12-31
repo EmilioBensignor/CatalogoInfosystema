@@ -228,3 +228,35 @@ a {
     padding: 2.5rem;
   }
 }
+
+@media (width >=1080px) {
+  section {
+    gap: 2.5rem;
+    padding: 2.5rem 3.75rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 1.25rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .p-overlay-mask .dialogDetail {
+    max-width: 960px;
+    padding: 2.5rem 3.75rem;
+  }
+}

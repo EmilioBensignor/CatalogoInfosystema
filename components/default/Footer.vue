@@ -93,4 +93,18 @@ ul li a {
     padding: 1.25rem 2.5rem;
   }
 }
+
+@media (width >=1080px) {
+  footer {
+    padding: 1.25rem 3.75rem;
+  }
+
+  .logo {
+    width: 4.25rem;
+  }
+
+  .socialMedia li a p {
+    font-size: 1.25rem;
+  }
+}
 </style>

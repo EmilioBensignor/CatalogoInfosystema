@@ -103,4 +103,19 @@ export default {
     padding: 0.35rem 1.75rem;
   }
 }
+
+@media (width >=1080px) {
+  .banner {
+    padding: 6.5rem 0 2.5rem 0;
+  }
+
+  .title {
+    padding: 0.5rem 2rem;
+  }
+
+  .bannerContainer > div img {
+    width: 80%;
+    max-width: 300px;
+  }
+}
 </style>

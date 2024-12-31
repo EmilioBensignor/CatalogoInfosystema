@@ -144,7 +144,11 @@ export default {
 
 @media (width >=660px) {
   .p-drawer {
-    width: 11.25rem !important;
+    width: 12rem !important;
+  }
+
+  .navMenu a {
+    font-size: 1.5rem;
   }
 }
 </style>
@@ -178,9 +182,15 @@ header {
   .logo {
     width: 6.75rem;
   }
+}
 
-  .navMenu a {
-    font-size: 1.5rem;
+@media (width >=1080px) {
+  header {
+    padding: 1.25rem 3.75rem;
+  }
+
+  .logo {
+    width: 7.25rem;
   }
 }
 </style>

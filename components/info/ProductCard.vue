@@ -64,7 +64,7 @@ export default {
 @media (width >=660px) {
   .producto {
     width: 31%;
-    max-width: 250px;
+    max-width: 200px;
     padding: 1.25rem;
   }
 
@@ -80,7 +80,17 @@ export default {
 
 @media (width >=1080px) {
   .producto {
-    max-width: 300px;
+    width: 23.25%;
+    max-width: 225px;
+  }
+
+  .producto>img {
+    max-width: 170px;
+  }
+
+  .producto>div p,
+  .producto>div p:last-of-type {
+    font-size: 1.5rem;
   }
 }
 </style>
