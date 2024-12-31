@@ -20,6 +20,13 @@
           </nav>
         </Drawer>
       </div>
+      <nav class="desktopNav">
+        <ul>
+          <li v-for="item in menu" :key="item.label">
+            <NuxtLink :to="item.to" class="text-white no-underline">{{ item.label }}</NuxtLink>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 </template>
@@ -174,6 +181,10 @@ header {
   width: 5.625rem;
 }
 
+.desktopNav {
+  display: none;
+}
+
 @media (width >=660px) {
   header {
     padding: 1.25rem 2.5rem;
@@ -189,8 +200,23 @@ header {
     padding: 1.25rem 3.75rem;
   }
 
+  header>div {
+    justify-content: space-between !important;
+    flex-direction: row;
+  }
+
   .logo {
     width: 7.25rem;
+  }
+
+  .desktopNav {
+    display: block;
+  }
+
+  .desktopNav ul {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
   }
 }
 </style>
