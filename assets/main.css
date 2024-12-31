@@ -40,7 +40,7 @@ footer>div {
 }
 
 header>div,
-main>section,
+main>section>*,
 footer>div,
 .rights>div {
   max-width: 1440px;
