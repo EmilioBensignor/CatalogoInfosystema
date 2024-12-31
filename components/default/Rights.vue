@@ -18,4 +18,10 @@ export default {
   div {
     padding: 0.5rem;
   }
+
+  @media (width >=1440px) {
+    p {
+      font-size: 1rem;
+    }
+  }
 </style>

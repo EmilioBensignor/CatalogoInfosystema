@@ -93,4 +93,15 @@ export default {
     font-size: 1.5rem;
   }
 }
+
+@media (width >=1440px) {
+  .producto {
+    width: 25%;
+    max-width: 235px;
+  }
+
+  .producto>p {
+    font-size: 1.25rem;
+  }
+}
 </style>

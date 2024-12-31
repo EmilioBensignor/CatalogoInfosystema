@@ -6,7 +6,7 @@
         :numVisible="1"
         :numScroll="1"
         circular
-        :autoplayInterval="300000000"
+        :autoplayInterval="3000"
         :showNavigators="false"
         :showIndicators="true"
       >
@@ -54,7 +54,12 @@ export default {
 </script>
 
 <style scoped>
+main>section {
+  max-width: 100%;
+}
+
 .bannerContainer {
+  max-width: 1440px;
   gap: 2.5rem;
   overflow: hidden;
 }
@@ -100,7 +105,7 @@ export default {
   }
 
   .title {
-    padding: 0.35rem 1.75rem;
+    padding: 0.25rem 1.75rem;
   }
 }
 
@@ -110,7 +115,7 @@ export default {
   }
 
   .title {
-    padding: 0.5rem 2rem;
+    padding: 0.25rem 2.5rem;
   }
 
   .bannerContainer > div img {

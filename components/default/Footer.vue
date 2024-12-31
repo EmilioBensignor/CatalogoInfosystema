@@ -106,5 +106,9 @@ ul li a {
   .socialMedia li a p {
     font-size: 1.25rem;
   }
+
+  .socialMedia li a span {
+    font-size: 1.5rem !important;
+  }
 }
 </style>
