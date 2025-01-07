@@ -5,7 +5,7 @@
         <Icon size="1.5rem" name="mingcute:menu-line" />
       </button>
       <NuxtLink :to="routes.HOME">
-        <NuxtImg class="logo" src="/images/Logo-Empresa.svg" alt="Logo Infosystema" />
+        <NuxtImg class="logo" src="/images/Logo-We-Glam.svg" alt="Logo Infosystema" />
       </NuxtLink>
       <div class="menuSidebar">
         <Drawer :visible="drawerMenu" :modal="true" :dismissable="true" :closeOnEscape="true" class="column"
