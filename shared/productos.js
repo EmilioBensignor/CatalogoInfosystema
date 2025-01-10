@@ -11,46 +11,57 @@ export const productos = [
   },
   {
     code: "EZ-00030",
+    image: "producto",
     title: "tender vertical 4 niveles",
     dolarCost: "26.04",
     pesosCost: "26560.8",
     mayoristaPrice: "34529",
     description: "Lorem",
+    destacado: true,
   },
   {
     code: "JJE-135002",
+    image: "producto",
     title: "secaplatos 85  cm",
     dolarCost: "25.68",
     pesosCost: "26193.6",
     mayoristaPrice: "34052",
     description: "Lorem",
+    destacado: true,
   },
   {
     code: "JJE-135001",
+    image: "producto",
     title: "secaplatos 65 cm",
     dolarCost: "21.46",
     pesosCost: "21889.2",
     mayoristaPrice: "28456",
     description: "Lorem",
+    destacado: true,
   },
   {
     code: "EZ-00010",
+    image: "producto",
     title: "bomba dispenser",
     dolarCost: "2.32",
     pesosCost: "2366.4",
     mayoristaPrice: "3076",
     description: "Lorem",
+    destacado: true,
   },
   {
     code: "EZ-000013",
+    image: "producto",
     title: "flambeador",
     dolarCost: "2.76",
     pesosCost: "2815.2",
     mayoristaPrice: "3660",
     description: "Lorem",
+    destacado: true,
   },
   {
     code: "EZ-00008",
+    image: "producto",
     title: "deterctor de humo",
     dolarCost: "2.06",
     pesosCost: "2101.2",
@@ -59,6 +70,7 @@ export const productos = [
   },
   {
     code: "EZ-3005",
+    image: "producto",
     title: "secaplatos modelo S",
     dolarCost: "8.58",
     pesosCost: "8751.6",
@@ -67,6 +79,7 @@ export const productos = [
   },
   {
     code: "EZ-00007",
+    image: "producto",
     title: "cubrezapatillas",
     dolarCost: "2.5",
     pesosCost: "2550",
@@ -75,6 +88,7 @@ export const productos = [
   },
   {
     code: "JJE-125001",
+    image: "producto",
     title: "CARRO CHANGO",
     dolarCost: "27.64",
     pesosCost: "28192.8",
@@ -83,6 +97,7 @@ export const productos = [
   },
   {
     code: "DUCHA-C",
+    image: "producto",
     title: "DUCHA CUADRA 20X20 CM",
     dolarCost: "2",
     pesosCost: "2040",
@@ -91,6 +106,7 @@ export const productos = [
   },
   {
     code: "JJE-10011",
+    image: "producto",
     title: "ZORRA 130 KG",
     dolarCost: "51.24",
     pesosCost: "52264.8",
@@ -99,6 +115,7 @@ export const productos = [
   },
   {
     code: "NEJ-160",
+    image: "producto",
     title: "TENDER 160 CM BLANCO",
     dolarCost: "12.54",
     pesosCost: "12790.8",
@@ -107,6 +124,7 @@ export const productos = [
   },
   {
     code: "NEJ-180",
+    image: "producto",
     title: "TENDER 180 CM BLANCO",
     dolarCost: "13.43",
     pesosCost: "13698.6",
@@ -115,6 +133,7 @@ export const productos = [
   },
   {
     code: "SHIR-160",
+    image: "producto",
     title: "TENDER 160 CM GRIS",
     dolarCost: "14.63",
     pesosCost: "14922.6",
@@ -123,6 +142,7 @@ export const productos = [
   },
   {
     code: "EZ-000017",
+    image: "producto",
     title: "LUZ LED BICI (PAR)",
     dolarCost: "2.4",
     pesosCost: "2448",
@@ -131,6 +151,7 @@ export const productos = [
   },
   {
     code: "JJE-135007",
+    image: "producto",
     title: "secaplato",
     dolarCost: "18.97",
     pesosCost: "19349.4",
@@ -139,6 +160,7 @@ export const productos = [
   },
   {
     code: "JJE-135005",
+    image: "producto",
     title: "secaplato",
     dolarCost: "31.54",
     pesosCost: "32170.8",
@@ -147,6 +169,7 @@ export const productos = [
   },
   {
     code: "EZ-000024",
+    image: "producto",
     title: "Termometro de cocina",
     dolarCost: "1.5",
     pesosCost: "1530",

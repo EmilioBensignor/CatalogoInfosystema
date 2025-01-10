@@ -3,9 +3,9 @@
     <NuxtImg class="w-full" :src="`/images/${producto.image}.png`" :alt="producto.title" />
     <p class="w-full">{{ producto.title }}</p>
     <div class="w-full rowSpaceBetween align-items-end">
-      <p class="font-bold">
+      <!-- <p class="font-bold">
         ${{ producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
-      </p>
+      </p> -->
       <p class="font-bold text-dark-gray"><sup>+</sup>IVA</p>
     </div>
   </article>
