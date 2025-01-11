@@ -3,15 +3,17 @@
     <NuxtImg class="w-full" :src="producto.image" :alt="producto.title" />
     <p class="w-full">{{ producto.title }}</p>
     <div class="w-full rowSpaceBetween align-items-end">
-      <!-- <p class="font-bold">
-        ${{ producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
-      </p> -->
+      <p class="font-bold">
+        ${{ calculatePrice(producto.dolarCost).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
+      </p>
       <p class="font-bold text-dark-gray"><sup>+</sup>IVA</p>
     </div>
   </article>
 </template>
 
 <script>
+import { DOLAR_WE_GLAM, PROFIT_MULTIPLIER } from '~/shared/variables';
+
 export default {
   props: {
     producto: {
@@ -19,6 +21,11 @@ export default {
       required: true,
     },
   },
+  methods: {
+    calculatePrice(dolarCost) {
+      return Math.round(dolarCost * DOLAR_WE_GLAM * PROFIT_MULTIPLIER);
+    }
+  }
 };
 </script>
 
