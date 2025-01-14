@@ -3,7 +3,9 @@
     <section class="columnAlignCenter">
       <h1 class="text-center">Nuestros Productos</h1>
       <div class="productosContainer">
-        <InfoProductCard :producto="producto" v-for="(producto, index) in productos" :key="index" />
+        <InfoProductCard :producto="producto" v-for="(producto, index) in productos" :key="index" @showDetail="openDetail"  />
+        <InfoProductDetail :visible="dialogVisible" :producto="selectedProduct"
+          @update:visible="dialogVisible = $event" />
       </div>
     </section>
   </main>
@@ -16,8 +18,16 @@ export default {
   data() {
     return {
       productos,
+      dialogVisible: false,
+      selectedProduct: null,
     };
   },
+  methods: {
+    openDetail(producto) {
+      this.selectedProduct = producto;
+      this.dialogVisible = true;
+    }
+  }
 }
 </script>
 

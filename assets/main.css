@@ -121,6 +121,7 @@ a {
 }
 
 .productosContainer {
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -227,6 +228,7 @@ a {
     gap: 0.75rem;
     padding: 2.5rem;
   }
+
 }
 
 @media (width >=1080px) {
@@ -258,6 +260,11 @@ a {
   .p-overlay-mask .dialogDetail {
     max-width: 960px;
     padding: 2.5rem 3.75rem;
+  }
+
+  .dialogDetail .p-dialog-header .p-icon {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 

@@ -8,14 +8,14 @@
             <NuxtLink :to="link.to">{{ link.label }}</NuxtLink>
           </li>
         </ul>
-        <ul class="socialMedia column align-items-end">
+        <!-- <ul class="socialMedia column align-items-end">
           <li v-for="(media, index) in socialMedia" :key="index">
             <a :href="media.to" class="rowCenter" target="_blank">
               <p>{{ media.label }}</p>
               <Icon :name="media.icon" />
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </footer>
