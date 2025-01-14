@@ -131,7 +131,7 @@ a {
 /* Dialog */
 
 .p-overlay-mask {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5) !important;
 }
 
 .p-overlay-mask .dialogDetail {
