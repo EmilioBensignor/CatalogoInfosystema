@@ -3,7 +3,8 @@
 :root {
   --color-white: #F5F3F3;
   --color-black: #1D1D1D;
-  --color-dark-gray: #7C797A;
+  --color-dark-gray: #535152;
+  --color-gray: #7C797A;
   --gradient-black: linear-gradient(180deg, var(--color-white), var(--color-black));
 }
 
@@ -185,6 +186,11 @@ a {
   color: var(--color-white);
 }
 
+.bg-gray {
+  background-color: var(--color-gray);
+  color: var(--color-white);
+}
+
 .bg-gradient-black {
   background: var(--gradient-black);
   color: var(--color-white);
@@ -194,8 +200,8 @@ a {
   color: var(--color-white);
 }
 
-.text-dark-gray {
-  color: var(--color-dark-gray);
+.text-gray {
+  color: var(--color-gray);
 }
 
 @media (width >=380px) {
@@ -249,7 +255,8 @@ a {
     font-size: 1rem;
   }
 
-  a, .primaryButton {
+  a,
+  .primaryButton {
     font-size: 1.25rem;
   }
 
@@ -281,7 +288,8 @@ a {
     font-size: 1.25rem;
   }
 
-  a, .primaryButton {
+  a,
+  .primaryButton {
     font-size: 1.5rem;
   }
 

@@ -231,7 +231,7 @@ header>div {
   left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--color-dark-gray);
+  color: var(--color-gray);
 }
 
 @media (width >=660px) {
@@ -273,7 +273,7 @@ header>div {
     max-width: 400px;
     margin: 0;
   }
-  
+
   .searchBox input::placeholder {
     font-size: 1rem;
   }

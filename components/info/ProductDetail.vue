@@ -10,7 +10,7 @@
                     <p class="dialogBig font-bold">
                         ${{ calculatePrice(producto.dolarCost).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
                     </p>
-                    <p class="dialogBig font-bold text-dark-gray"><sup>+</sup>IVA</p>
+                    <p class="dialogBig font-bold text-gray"><sup>+</sup>IVA</p>
                 </div>
             </div>
         </div>
