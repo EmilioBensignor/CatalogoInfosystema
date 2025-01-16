@@ -215,11 +215,11 @@ header>div {
   border-radius: 999px;
   border: none;
   background-color: #fff;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 .searchBox input::placeholder {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
 
 .searchBox input:focus-visible {
@@ -241,11 +241,6 @@ header>div {
 
   .logo {
     width: 6.75rem;
-  }
-
-  .searchBox input,
-  .searchBox input::placeholder {
-    font-size: 0.875rem;
   }
 }
 
@@ -278,8 +273,7 @@ header>div {
     max-width: 400px;
     margin: 0;
   }
-
-  .searchBox input,
+  
   .searchBox input::placeholder {
     font-size: 1rem;
   }
