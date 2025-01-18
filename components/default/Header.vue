@@ -11,7 +11,7 @@
       </div>
       <div class="w-full searchContainer">
         <div class="w-full searchBox">
-          <input type="text" placeholder="Buscar productos..." v-model="searchQuery" @input="handleSearch"
+          <input name="search" type="text" placeholder="Buscar productos..." v-model="searchQuery" @input="handleSearch"
             @keyup.enter="handleSearch">
           <Icon name="mingcute:search-line" class="searchIcon" />
         </div>
