@@ -1,5 +1,6 @@
 <template>
     <main>
+        <h1>We Glam</h1>
         <section>
             <div class="w-full busqueda">
                 <p>Productos relacionados con</p>
