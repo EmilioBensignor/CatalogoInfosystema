@@ -91,6 +91,42 @@ picture {
 }
 
 :deep(.swiper-pagination) {
-  bottom: 1.25rem !important;
+  bottom: 0.25rem !important;
+}
+
+@media (width >=660px) {
+  :deep(.swiper-pagination) {
+    bottom: 0.75rem !important;
+  }
+
+  :deep(.swiper-pagination-bullet) {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+@media (width >=1080px) {
+  :deep(.swiper-pagination) {
+    bottom: 1rem !important;
+  }
+
+  :deep(.swiper-pagination-bullet) {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (width >=1440px) {
+  :deep(.swiper-pagination-bullet) {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (width >=1920px) {
+  :deep(.swiper-pagination-bullet) {
+    width: 10px;
+    height: 10px;
+  }
 }
 </style>
