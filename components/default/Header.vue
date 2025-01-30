@@ -59,8 +59,11 @@ export default {
     };
   },
   watch: {
-    $route() {
+    $route(to) {
       this.closeDrawer();
+      if (to.path !== this.routes.BUSQUEDA) {
+        this.searchQuery = '';
+      }
     }
   },
   mounted() {
@@ -103,6 +106,10 @@ export default {
       })
     }
   },
+  beforeRouteLeave(to, from, next) {
+    this.searchQuery = '';
+    next();
+  }
 };
 </script>
 

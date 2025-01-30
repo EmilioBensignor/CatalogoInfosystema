@@ -1,6 +1,5 @@
 <template>
   <main>
-    <h1>We Glam</h1>
     <section class="columnAlignCenter">
       <h1 class="text-center">Nuestros Productos</h1>
       <div class="productosContainer">

@@ -1,10 +1,12 @@
 <template>
     <main>
-        <h1>We Glam</h1>
         <section>
-            <div class="w-full busqueda">
+            <div v-if="searchQuery" class="w-full busqueda">
                 <p>Productos relacionados con</p>
                 <h1>{{ capitalize(searchQuery) }}</h1>
+            </div>
+            <div v-else class="w-full busqueda">
+                <p>Escribe algo en el buscador para filtrar productos</p>
             </div>
             <div v-if="filteredProducts.length === 0" class="text-center">
                 No se encontraron productos relacionados con tu búsqueda
@@ -73,7 +75,7 @@ export default {
                 .replace(/[\u0300-\u036f]/g, '')
                 .replace(/[^a-zA-Z0-9\s]/g, '')
         }
-    }
+    },
 }
 </script>
 

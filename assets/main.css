@@ -104,14 +104,7 @@ section {
 }
 
 h1 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  font-size: 1.5rem;
 }
 
 h2 {
@@ -130,7 +123,6 @@ a {
 .productosContainer {
   width: 100%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -216,6 +208,10 @@ a {
     padding: 1.25rem 2.5rem;
   }
 
+  h1 {
+    font-size: 1.75rem;
+  }
+
   h2 {
     width: 100%;
     text-align: start;
@@ -238,6 +234,10 @@ a {
   section {
     gap: 2.5rem;
     padding: 2.5rem 3.75rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
   }
 
   h2 {
@@ -269,6 +269,10 @@ a {
 }
 
 @media (width >=1440px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
   h2 {
     font-size: 2.25rem;
   }
@@ -287,7 +291,12 @@ a {
   }
 
   .productosContainer {
-    justify-content: space-between;
     gap: 2rem;
+  }
+}
+
+@media (width >=1920px) {
+  .productosContainer {
+    gap: 3rem;
   }
 }
