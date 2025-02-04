@@ -12,7 +12,7 @@
           <li v-for="(media, index) in socialMedia" :key="index">
             <a :href="media.to" class="rowCenter" target="_blank">
               <p>{{ media.label }}</p>
-              <Icon :name="media.icon" />
+              <Icon :name="`mingcute:${media.icon}`" />
             </a>
           </li>
         </ul>
@@ -39,14 +39,14 @@ export default {
       ],
       socialMedia: [
         {
-          label: "+54 9 11 2222 3333",
-          to: "#",
-          icon: "mingcute:whatsapp-line",
+          label: "+54 9 11 5367 0523",
+          to: "https://wa.me/1153670523/?text=¡Hola! Estoy en el catálogo de We Glam Importadores y quiero pedir más información.",
+          icon: "whatsapp-line",
         },
         {
           label: "We Glam",
-          to: "https://www.mercadolibre.com.ar/pagina/weglam",
-          icon: "simple-icons:mercadopago",
+          to: "#",
+          icon: "location-line",
         },
       ],
     };
