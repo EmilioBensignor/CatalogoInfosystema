@@ -45,7 +45,7 @@ export default {
         },
         {
           label: "We Glam",
-          to: "#",
+          to: "https://maps.app.goo.gl/itCtFp6wpwuaCerBA",
           icon: "location-line",
         },
       ],
