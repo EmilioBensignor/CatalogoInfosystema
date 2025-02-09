@@ -3,7 +3,7 @@
     <section class="columnAlignCenter">
       <h1 class="text-center">Nuestros Productos</h1>
       <div class="productosContainer">
-        <InfoProductCard :producto="producto" v-for="(producto, index) in productos" :key="index" @showDetail="openDetail"  />
+        <InfoProductCard :producto="producto" v-for="(producto, index) in store.productos" :key="index" @showDetail="openDetail"  />
         <InfoProductDetail :visible="dialogVisible" :producto="selectedProduct"
           @update:visible="dialogVisible = $event" />
       </div>
@@ -12,12 +12,10 @@
 </template>
 
 <script>
-import { productos } from '~/shared/productos';
-
 export default {
   data() {
     return {
-      productos,
+      store: useProductosStore(),
       dialogVisible: false,
       selectedProduct: null,
     };

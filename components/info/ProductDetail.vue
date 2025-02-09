@@ -2,13 +2,13 @@
     <Dialog :visible="visible" @update:visible="$emit('update:visible', $event)" modal :dismissableMask="true"
         class="dialogDetail">
         <div class="dialogBody columnAlignCenter">
-            <NuxtImg class="w-full" :src="producto?.image" :alt="producto?.title" />
+            <!-- <NuxtImg class="w-full" :src="producto?.imagen" :alt="producto?.titulo" /> -->
             <div class="w-full columnAlignCenter">
-                <p class="w-full dialogBig font-bold">{{ producto?.title }}</p>
-                <p class="w-full">{{ producto?.description }}</p>
+                <p class="w-full dialogBig font-bold">{{ producto?.titulo }}</p>
+                <p class="w-full">{{ producto?.descripcion }}</p>
                 <div class="w-full rowSpaceBetween align-items-end">
                     <p class="dialogBig font-bold">
-                        ${{ calculatePrice(producto.dolarCost).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
+                        ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
                     </p>
                     <p class="dialogBig font-bold text-gray"><sup>+</sup>IVA</p>
                 </div>
@@ -18,8 +18,6 @@
 </template>
 
 <script>
-import { DOLAR_WE_GLAM, PROFIT_MULTIPLIER } from '~/shared/variables';
-
 export default {
     props: {
         visible: {
@@ -31,9 +29,14 @@ export default {
             default: null,
         },
     },
+    data() {
+        return {
+            store: useVariablesStore(),
+        }
+    },
     methods: {
         calculatePrice(dolarCost) {
-            return Math.round(dolarCost * DOLAR_WE_GLAM * PROFIT_MULTIPLIER);
+            return Math.round(dolarCost * this.store.DOLAR_WG * this.store.GANANCIA)
         }
     },
     emits: ['update:visible']

@@ -25,13 +25,12 @@
 <script>
 import { capitalize } from 'vue';
 import { ROUTE_NAMES } from '~/constants/ROUTE_NAMES';
-import { productos } from '~/shared/productos';
 
 export default {
     data() {
         return {
             routes: ROUTE_NAMES,
-            productos: productos,
+            store: useProductosStore(),
             searchQuery: '',
             dialogVisible: false,
             selectedProduct: null,
@@ -49,12 +48,12 @@ export default {
 
     computed: {
         filteredProducts() {
-            if (!this.searchQuery) return this.productos
+            if (!this.searchQuery) return this.store.productos
 
             const query = this.normalizeText(this.searchQuery.toLowerCase())
 
-            return this.productos.filter(producto => {
-                const titleNormalized = this.normalizeText(producto.title.toLowerCase())
+            return this.store.productos.filter(producto => {
+                const titleNormalized = this.normalizeText(producto.titulo.toLowerCase())
                 const descriptionNormalized = producto.description ?
                     this.normalizeText(producto.description.toLowerCase()) : ''
 

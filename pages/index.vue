@@ -2,7 +2,7 @@
   <main>
     <h1>We Glam</h1>
     <HomeHero />
-    <HomeDestacados />
+    <HomeProductos />
   </main>
 </template>
 

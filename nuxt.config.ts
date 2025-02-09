@@ -3,7 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   css: ["~/assets/main.css"],
-  modules: ["@primevue/nuxt-module", "@nuxt/image", "@nuxt/icon", "@nuxtjs/seo", "nuxt-vitalizer", 'nuxt-booster', '@nuxtjs/fontaine', 'nuxt-anchorscroll', '@nuxt/scripts', 'nuxt-swiper'],
+  modules: ["@primevue/nuxt-module", "@nuxt/image", "@nuxt/icon", "@nuxtjs/seo", "nuxt-vitalizer", 'nuxt-booster', '@nuxtjs/fontaine', 'nuxt-anchorscroll', '@nuxt/scripts', 'nuxt-swiper', '@nuxtjs/supabase', '@pinia/nuxt'],
+  supabase: {
+    redirect: false,
+  },
   icon: {
     size: '1rem',
     serverBundle: {
@@ -76,5 +79,8 @@ export default defineNuxtConfig({
   vitalizer: {
     disableStylesheets: 'entry',
     disablePrefetchLinks: true
+  },
+  imports: {
+    dirs: ['store']
   },
 })

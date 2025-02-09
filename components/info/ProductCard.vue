@@ -1,10 +1,10 @@
 <template>
   <article class="producto columnAlignCenter bg-white shadow-3" @click="$emit('showDetail', producto)">
-    <NuxtImg class="w-full" :src="producto.image" :alt="producto.title" />
-    <p class="w-full">{{ producto.title }}</p>
+    <!-- <NuxtImg class="w-full" :src="producto.imagen" :alt="producto.titulo" /> -->
+    <p class="w-full">{{ producto.titulo }}</p>
     <div class="w-full rowSpaceBetween align-items-end">
       <p class="font-bold">
-        ${{ calculatePrice(producto.dolarCost).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
+        ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
       </p>
       <p class="font-bold text-gray"><sup>+</sup>IVA</p>
     </div>
@@ -12,8 +12,6 @@
 </template>
 
 <script>
-import { DOLAR_WE_GLAM, PROFIT_MULTIPLIER } from '~/shared/variables';
-
 export default {
   props: {
     producto: {
@@ -21,12 +19,17 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      store: useVariablesStore(),
+    }
+  },
   methods: {
     calculatePrice(dolarCost) {
-      return Math.round(dolarCost * DOLAR_WE_GLAM * PROFIT_MULTIPLIER);
+      return Math.round(dolarCost * this.store.DOLAR_WG * this.store.GANANCIA)
     }
-  }
-};
+  },
+}
 </script>
 
 <style scoped>

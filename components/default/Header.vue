@@ -11,7 +11,7 @@
       </div>
       <div class="w-full searchContainer">
         <div class="w-full searchBox">
-          <input name="search" type="text" placeholder="Buscar productos..." v-model="searchQuery" @input="handleSearch"
+          <input type="text" id="buscador" placeholder="Buscar productos..." v-model="searchQuery" @input="handleSearch"
             @keyup.enter="handleSearch">
           <Icon name="mingcute:search-line" class="searchIcon" />
         </div>
@@ -59,11 +59,8 @@ export default {
     };
   },
   watch: {
-    $route(to) {
+    $route() {
       this.closeDrawer();
-      if (to.path !== this.routes.BUSQUEDA) {
-        this.searchQuery = '';
-      }
     }
   },
   mounted() {
@@ -106,10 +103,6 @@ export default {
       })
     }
   },
-  beforeRouteLeave(to, from, next) {
-    this.searchQuery = '';
-    next();
-  }
 };
 </script>
 
@@ -222,11 +215,11 @@ header>div {
   border-radius: 999px;
   border: none;
   background-color: #fff;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 
 .searchBox input::placeholder {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .searchBox input:focus-visible {
@@ -238,7 +231,7 @@ header>div {
   left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--color-gray);
+  color: var(--color-dark-gray);
 }
 
 @media (width >=660px) {
@@ -248,6 +241,11 @@ header>div {
 
   .logo {
     width: 6.75rem;
+  }
+
+  .searchBox input,
+  .searchBox input::placeholder {
+    font-size: 0.875rem;
   }
 }
 
@@ -281,6 +279,7 @@ header>div {
     margin: 0;
   }
 
+  .searchBox input,
   .searchBox input::placeholder {
     font-size: 1rem;
   }
