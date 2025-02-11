@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>We Glam</h1>
+    <h1>We Glam importadores</h1>
     <HomeHero />
     <HomeProductos />
   </main>
