@@ -24,7 +24,7 @@ body {
 }
 
 .layout {
-  height: 100dvh;
+  height: 100%;
   display: grid;
   grid: "header" auto "main" 1fr "footer" auto / 1fr;
 }
