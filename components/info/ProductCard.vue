@@ -1,6 +1,6 @@
 <template>
   <article class="producto columnAlignCenter bg-white shadow-3" @click="$emit('showDetail', producto)">
-    <!-- <NuxtImg class="w-full" :src="producto.imagen" :alt="producto.titulo" /> -->
+    <NuxtImg class="w-full" :src="producto.imagen" :alt="producto.titulo" />
     <p class="w-full">{{ producto.titulo }}</p>
     <div class="w-full rowSpaceBetween align-items-end">
       <p class="font-bold">

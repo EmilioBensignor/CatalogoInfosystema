@@ -2,7 +2,7 @@
     <Dialog :visible="visible" @update:visible="$emit('update:visible', $event)" modal :dismissableMask="true"
         class="dialogDetail">
         <div class="dialogBody columnAlignCenter">
-            <!-- <NuxtImg class="w-full" :src="producto?.imagen" :alt="producto?.titulo" /> -->
+            <NuxtImg class="w-full" :src="producto?.imagen" :alt="producto?.titulo" />
             <div class="w-full columnAlignCenter">
                 <p class="w-full dialogBig font-bold">{{ producto?.titulo }}</p>
                 <p class="w-full">{{ producto?.descripcion }}</p>
