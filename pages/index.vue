@@ -3,6 +3,7 @@
     <h1>We Glam importadores</h1>
     <HomeHero />
     <HomeProductos />
+    <HomeFAQs />
   </main>
 </template>
 
