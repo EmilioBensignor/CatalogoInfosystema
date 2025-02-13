@@ -177,7 +177,7 @@ export default {
 <style scoped>
 header {
   position: sticky;
-  top: 0;
+  top: 2.375rem;
   z-index: 10;
   padding: 1.25rem;
 }
@@ -236,6 +236,7 @@ header>div {
 
 @media (width >=660px) {
   header {
+    top: 2.563rem;
     padding: 1.25rem 2.5rem;
   }
 
@@ -251,6 +252,7 @@ header>div {
 
 @media (width >=1080px) {
   header {
+    top: 2.875rem;
     padding: 1.25rem 3.75rem;
   }
 
@@ -282,6 +284,12 @@ header>div {
   .searchBox input,
   .searchBox input::placeholder {
     font-size: 1rem;
+  }
+}
+
+@media (width >=1440px) {
+  header {
+    top: 3.25rem;
   }
 }
 </style>

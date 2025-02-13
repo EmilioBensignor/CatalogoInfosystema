@@ -23,12 +23,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.layout {
-  height: 100%;
-  display: grid;
-  grid: "header" auto "main" 1fr "footer" auto / 1fr;
-}
-
 header>div,
 main>section,
 footer>div {
@@ -39,19 +33,12 @@ footer>div {
   margin: 0 auto;
 }
 
+.compra>div,
 header>div,
 main>section>*,
 footer>div,
 .rights>div {
   max-width: 1440px;
-}
-
-main {
-  grid-area: main;
-}
-
-footer {
-  grid-area: footer;
 }
 
 /* Flex */

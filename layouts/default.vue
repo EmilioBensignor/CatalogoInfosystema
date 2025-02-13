@@ -1,5 +1,6 @@
 <template>
   <div>
+    <DefaultCompra />
     <DefaultHeader />
     <slot />
     <DefaultFooter />
