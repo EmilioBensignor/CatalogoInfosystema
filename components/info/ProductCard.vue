@@ -1,12 +1,17 @@
 <template>
-  <article class="producto columnAlignCenter bg-white shadow-3" @click="$emit('showDetail', producto)">
-    <NuxtImg class="w-full" :src="producto.imagen" :alt="producto.titulo" />
-    <p class="w-full">{{ producto.titulo }}</p>
-    <div class="w-full rowSpaceBetween align-items-end">
-      <p class="font-bold">
-        ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
-      </p>
-      <p class="font-bold text-gray"><sup>+</sup>IVA</p>
+  <article :class="producto.promocion ? 'productoPromocion' : '' " class="producto columnAlignCenter bg-white shadow-3" @click="$emit('showDetail', producto)">
+    <div v-if="producto.promocion" class="promocion bg-black">
+      <p>{{ producto.promocion }}</p>
+    </div>
+    <div class="productoContent columnAlignCenter">
+      <NuxtImg class="w-full" :src="producto.imagen" :alt="producto.titulo" />
+      <p class="w-full">{{ producto.titulo }}</p>
+      <div class="w-full rowSpaceBetween align-items-end">
+        <p class="font-bold">
+          ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
+        </p>
+        <p class="font-bold text-gray"><sup>+</sup>IVA</p>
+      </div>
     </div>
   </article>
 </template>
@@ -36,11 +41,29 @@ export default {
 .producto {
   width: 46.5%;
   max-width: 175px;
-  justify-content: space-between;
-  gap: 0.625rem;
+  justify-content: flex-end;
   border-radius: 7px;
-  padding: 0.625rem;
   cursor: pointer;
+}
+
+.productoPromocion {
+  justify-content: space-between;
+}
+
+.promocion {
+  width: 100%;
+  text-align: center;
+  border-radius: 7px 7px 0 0;
+  padding: 0.25rem;
+}
+
+.promocion p {
+  font-size: 0.75rem !important;
+}
+
+.productoContent {
+  gap: 0.625rem;
+  padding: 0.625rem;
 }
 
 .producto>img {
@@ -75,6 +98,14 @@ export default {
   .producto {
     width: 31%;
     max-width: 200px;
+  }
+
+  .promocion p {
+    font-size: 0.875rem !important;
+  }
+
+  .productoContent {
+    gap: 0.625rem;
     padding: 1.25rem;
   }
 
@@ -94,6 +125,10 @@ export default {
     max-width: 225px;
   }
 
+  .promocion p {
+    font-size: 1rem !important;
+  }
+
   .producto>img {
     max-width: 170px;
   }
@@ -108,6 +143,10 @@ export default {
   .producto {
     width: 25%;
     max-width: 235px;
+  }
+
+  .promocion p {
+    font-size: 1.25rem !important;
   }
 
   .producto>p {
