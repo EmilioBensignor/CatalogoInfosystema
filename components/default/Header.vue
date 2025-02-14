@@ -335,7 +335,7 @@ header>div {
     font-weight: 400;
   }
 
-  .dropdownContent {
+  .dropdownContent.open {
     padding-top: 1.25rem;
   }
 

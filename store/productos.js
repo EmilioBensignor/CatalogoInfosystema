@@ -7,7 +7,10 @@ export const useProductosStore = defineStore('productos', {
 
     getters: {
         getProductos: (state) => state.productos,
-        isLoading: (state) => state.loading
+        isLoading: (state) => state.loading,
+        getProductosByCategoria: (state) => (categoriaSlug) => {
+            return state.productos.filter(producto => producto.categoria === categoriaSlug)
+        }
     },
 
     actions: {
