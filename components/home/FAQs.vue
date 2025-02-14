@@ -2,12 +2,12 @@
     <section class="columnAlignCenter">
         <h2>Preguntas frecuentes</h2>
         <div class="w-full faqWrapper column">
-            <div>
-                <Accordion value="0" class="w-full" v-for="(faq, index) in faqsLeft"
-                    :key="index">
+            <div class="faqRight column">
+                <Accordion value="0" class="w-full" v-for="(faq, index) in faqsLeft" :key="index">
                     <AccordionPanel value="1">
                         <AccordionHeader>
                             <p>{{ faq.question }}</p>
+                            <Icon class="accordionIcon" name="mingcute:add-line" />
                         </AccordionHeader>
                         <AccordionContent>
                             <ClientOnly>
@@ -17,12 +17,12 @@
                     </AccordionPanel>
                 </Accordion>
             </div>
-            <div>
-                <Accordion value="0" class="w-full" v-for="(faq, index) in faqsRight"
-                    :key="index">
+            <div class="faqLeft column">
+                <Accordion value="0" class="w-full" v-for="(faq, index) in faqsRight" :key="index">
                     <AccordionPanel value="1">
                         <AccordionHeader>
                             <p>{{ faq.question }}</p>
+                            <Icon class="accordionIcon" name="mingcute:add-line" />
                         </AccordionHeader>
                         <AccordionContent>
                             <ClientOnly>
@@ -64,3 +64,101 @@ export default {
     },
 }
 </script>
+
+<style>
+.faqWrapper .p-accordionpanel,
+.faqWrapper .p-accordionheader,
+.faqWrapper .p-accordioncontent-content {
+    border: none;
+}
+
+.faqWrapper,
+.faqWrapper>div {
+    gap: 0.625rem;
+}
+
+.faqWrapper .p-accordionheader-toggle-icon {
+    display: none;
+}
+
+.faqWrapper .p-accordion {
+    border-bottom: 2px solid #999999;
+    padding-bottom: 0.625rem;
+}
+
+.faqLeft .p-accordion:last-child {
+    border-bottom: none;
+}
+
+.faqWrapper .p-accordionheader p {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.faqWrapper .accordionIcon {
+    font-size: 0.875rem !important;
+    color: #999999;
+    transition: all 0.3s;
+}
+
+.faqWrapper .p-accordionpanel-active .accordionIcon {
+    transform: rotate(45deg);
+}
+
+.faqWrapper .p-accordioncontent-content {
+    padding-top: 0.625rem;
+}
+
+.faqWrapper .p-accordioncontent-content a {
+    color: var(--color-black);
+}
+
+@media (width >=660px) {
+    .faqWrapper .p-accordionheader p {
+        font-size: 1rem;
+    }
+
+    .faqWrapper .p-accordioncontent-content p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (width >=992px) {
+    .faqWrapper {
+        flex-direction: row;
+        gap: 2.75rem;
+    }
+
+    .faqWrapper>div {
+        width: 50%;
+        height: 100%;
+    }
+
+    .faqRight .p-accordion:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (width >=1080px) {
+    .faqWrapper .p-accordionheader p {
+        font-size: 1.25rem;
+    }
+
+    .faqWrapper .p-accordioncontent-content p,
+    .faqWrapper .p-accordioncontent-content a {
+        font-size: 1rem;
+    }
+}
+
+@media (width >=1440px) {
+    .faqWrapper .p-accordionheader p {
+        font-size: 1.5rem;
+    }
+
+
+    .faqWrapper .p-accordioncontent-content p,
+    .faqWrapper .p-accordioncontent-content a {
+        font-size: 1.25rem;
+    }
+}
+</style>
