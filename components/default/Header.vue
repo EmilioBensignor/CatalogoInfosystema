@@ -25,19 +25,7 @@
         </template>
         <nav class="w-full navMenu column">
           <InfoMenu :menu="menu" />
-          <div class="categoriesDropdown column">
-            <button @click="isCategoriesOpen = !isCategoriesOpen" class="rowCenter">
-              <span>Categorías</span>
-              <Icon :class="isCategoriesOpen ? 'rotatedIcon' : ''" name="mingcute:down-line" />
-            </button>
-            <div class="dropdownContent" :class="isCategoriesOpen ? 'open' : ''">
-              <ul class="column">
-                <li v-for="categoria in store.getCategorias" :key="categoria.id">
-                  <NuxtLink to="#">{{ categoria.nombre }}</NuxtLink>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <MenuCategories :categories="store.getCategorias" />
         </nav>
       </Drawer>
       <nav class="desktopNav">
@@ -45,8 +33,21 @@
           <li v-for="item in menu" :key="item.label">
             <NuxtLink :to="item.to" class="text-white no-underline">{{ item.label }}</NuxtLink>
           </li>
+          <li>
+            <button @click="isCategoriesOpen = !isCategoriesOpen" class="categoriesButton rowSpaceBetweenCenter">
+              <span>Categorías</span>
+              <Icon :class="isCategoriesOpen ? 'rotatedIcon' : ''" name="mingcute:down-line" />
+            </button>
+          </li>
         </ul>
       </nav>
+    </div>
+    <div class="dropdownContent" :class="isCategoriesOpen ? 'open' : ''">
+      <ul class="column">
+        <li v-for="categoria in store.getCategorias" :key="categoria.id">
+          <NuxtLink to="#" class="no-underline">{{ categoria.nombre }}</NuxtLink>
+        </li>
+      </ul>
     </div>
   </header>
 </template>
@@ -155,31 +156,40 @@ export default {
 }
 
 .navMenu a,
-.categoriesDropdown button {
+.categoriesButton {
   color: var(--color-white);
   font-weight: 700;
   font-size: 1.25rem;
   text-decoration: none;
 }
 
-.categoriesDropdown button {
+.categoriesButton {
   width: 100%;
   background: none;
   border: none;
   cursor: pointer;
 }
 
+.categoriesButton span:last-of-type {
+  font-size: 1.25rem !important;
+  transition: all 0.5s;
+}
+
+.rotatedIcon {
+  transform: rotate(180deg);
+}
+
 .dropdownContent {
   height: 0;
   interpolate-size: allow-keywords;
   overflow: hidden;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 
 .dropdownContent a {
   font-weight: 500;
   color: var(--color-white);
-  font-size: 1rem;
+  font-size: 0.875rem;
 }
 
 .dropdownContent.open {
@@ -202,8 +212,17 @@ export default {
     width: 12rem !important;
   }
 
-  .navMenu a {
+  .navMenu a,
+  .categoriesButton {
     font-size: 1.5rem;
+  }
+
+  .dropdownContent a {
+    font-size: 1rem;
+  }
+
+  .categoriesButton span:last-of-type {
+    font-size: 1.5rem !important;
   }
 }
 </style>
@@ -310,6 +329,34 @@ header>div {
     gap: 2.5rem;
   }
 
+  .categoriesButton {
+    gap: 0.625rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  .dropdownContent {
+    padding-top: 1.25rem;
+  }
+
+  .dropdownContent ul {
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+
+  .dropdownContent ul li a {
+    font-size: 1.25rem;
+    border-right: 1px solid var(--color-white);
+    padding-right: 2.5rem;
+  }
+
+  .dropdownContent ul li:last-of-type a {
+    border-right: none;
+    padding-right: 0;
+  }
+
   .searchBox {
     max-width: 400px;
     margin: 0;
@@ -324,6 +371,10 @@ header>div {
 @media (width >=1440px) {
   header {
     top: 3.25rem;
+  }
+
+  .categoriesButton, .dropdownContent ul li a {
+    font-size: 1.5rem;
   }
 }
 </style>
