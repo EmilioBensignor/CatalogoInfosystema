@@ -23,8 +23,21 @@
             <Icon name="mingcute:close-line" class="text-white" />
           </button>
         </template>
-        <nav class="w-full h-full navMenu columnSpaceBetween">
+        <nav class="w-full navMenu column">
           <InfoMenu :menu="menu" />
+          <div class="categoriesDropdown column">
+            <button @click="isCategoriesOpen = !isCategoriesOpen" class="rowCenter">
+              <span>Categorías</span>
+              <Icon :class="isCategoriesOpen ? 'rotatedIcon' : ''" name="mingcute:down-line" />
+            </button>
+            <div class="dropdownContent" :class="isCategoriesOpen ? 'open' : ''">
+              <ul class="column">
+                <li v-for="categoria in store.getCategorias" :key="categoria.id">
+                  <NuxtLink to="#">{{ categoria.nombre }}</NuxtLink>
+                </li>
+              </ul>
+            </div>
+          </div>
         </nav>
       </Drawer>
       <nav class="desktopNav">
@@ -45,6 +58,7 @@ export default {
     return {
       drawerMenu: false,
       routes: ROUTE_NAMES,
+      store: useCategoriasStore(),
       menu: [
         {
           label: "Inicio",
@@ -55,6 +69,7 @@ export default {
           to: ROUTE_NAMES.PRODUCTOS,
         },
       ],
+      isCategoriesOpen: false,
       searchQuery: '',
     };
   },
@@ -63,7 +78,8 @@ export default {
       this.closeDrawer();
     }
   },
-  mounted() {
+  async mounted() {
+    await this.store.fetchCategorias();
     document.addEventListener("click", this.handleOutsideClick);
     document.addEventListener("keydown", this.handleKeyDown);
   },
@@ -123,33 +139,51 @@ export default {
   display: none;
 }
 
-.navMenu .p-panelmenu {
+.navMenu,
+.navMenu .p-panelmenu,
+.categoriesDropdown,
+.dropdownContent ul {
   gap: 0.625rem;
+}
+
+.navMenu .p-panelmenu-panel {
+  border: none;
 }
 
 .navMenu .p-panelmenu-header {
   cursor: pointer;
 }
 
-.navMenu a {
+.navMenu a,
+.categoriesDropdown button {
   color: var(--color-white);
   font-weight: 700;
   font-size: 1.25rem;
   text-decoration: none;
 }
 
-.navMenu .p-panelmenu-submenu .p-panelmenu-item {
-  border-top: 1px solid #0b4f6c99;
-  padding: 0.875rem 3rem;
+.categoriesDropdown button {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.navMenu .p-panelmenu-item-content a {
+.dropdownContent {
+  height: 0;
+  interpolate-size: allow-keywords;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.dropdownContent a {
   font-weight: 500;
+  color: var(--color-white);
   font-size: 1rem;
 }
 
-.navMenu .p-panelmenu-item-content a span:first-of-type {
-  display: none;
+.dropdownContent.open {
+  height: auto;
 }
 
 .closeButton {
