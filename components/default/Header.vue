@@ -45,7 +45,7 @@
     <div class="dropdownContent" :class="isCategoriesOpen ? 'open' : ''">
       <ul class="column">
         <li v-for="categoria in store.getCategorias" :key="categoria.id">
-          <NuxtLink to="#" class="no-underline">{{ categoria.nombre }}</NuxtLink>
+          <NuxtLink :to="`/categorias/${categoria.slug}`" class="no-underline">{{ categoria.nombre }}</NuxtLink>
         </li>
       </ul>
     </div>

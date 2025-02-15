@@ -7,7 +7,7 @@
         <div class="dropdownContent" :class="isCategoriesOpen ? 'open' : ''">
             <ul class="column">
                 <li v-for="categoria in categories" :key="categoria.id">
-                    <NuxtLink to="#">{{ categoria.nombre }}</NuxtLink>
+                    <NuxtLink :to="`/categorias/${categoria.slug}`">{{ categoria.nombre }}</NuxtLink>
                 </li>
             </ul>
         </div>
@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            isCategoriesOpen: false,
+            isCategoriesOpen: true,
         };
     },
 }
