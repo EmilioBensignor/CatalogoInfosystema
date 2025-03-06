@@ -67,12 +67,13 @@ picture {
 
 
 :deep(.swiper-pagination-bullet) {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border: 1px solid var(--color-black);
   border-radius: 50%;
   background: transparent;
   opacity: 1;
+  margin: 0 0.5rem !important;
 }
 
 :deep(.swiper-pagination-bullet-active) {
@@ -100,8 +101,8 @@ picture {
   }
 
   :deep(.swiper-pagination-bullet) {
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
   }
 }
 
@@ -111,22 +112,23 @@ picture {
   }
 
   :deep(.swiper-pagination-bullet) {
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
+    margin: 0 0.75rem !important;
   }
 }
 
 @media (width >=1440px) {
   :deep(.swiper-pagination-bullet) {
-    width: 9px;
-    height: 9px;
+    width: 14px;
+    height: 14px;
   }
 }
 
 @media (width >=1920px) {
   :deep(.swiper-pagination-bullet) {
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
   }
 }
 </style>
