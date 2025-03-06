@@ -1,4 +1,6 @@
-# Nuxt Minimal Starter
+# We Glam
+
+https://www.weglam.com.ar/
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
