@@ -40,7 +40,7 @@ export default {
       socialMedia: [
         {
           label: "+54 9 11 5367 0523",
-          to: "https://wa.me/1153670523/?text=¡Hola! Estoy en el catálogo de We Glam Importadores y quiero pedir más información.",
+          to: "https://wa.me/+5491153670523/?text=¡Hola! Estoy en el catálogo de We Glam Importadores y quiero pedir más información.",
           icon: "whatsapp-line",
         },
         {

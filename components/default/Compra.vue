@@ -1,6 +1,6 @@
 <template>
     <div class="compra">
-        <p>Hacé tu pedido a partir de $200.000</p>
+        <p>Para ventas mayorístas a partir de $200.000</p>
     </div>
 </template>
 
