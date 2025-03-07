@@ -42,6 +42,7 @@
         </ul>
       </nav>
     </div>
+    <p class="bh">BH</p>
     <div class="dropdownContent" :class="isCategoriesOpen ? 'open' : ''">
       <ul class="column">
         <li v-for="categoria in store.getCategorias" :key="categoria.id">
@@ -230,13 +231,21 @@ export default {
 <style scoped>
 header {
   position: sticky;
-  top: 2.375rem;
+  top: 3.75rem;
   z-index: 10;
   padding: 1.25rem;
 }
 
 header>div {
+  position: relative;
   gap: 1.25rem;
+}
+
+.bh {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.5rem;
 }
 
 .hamburger {
@@ -249,7 +258,7 @@ header>div {
 }
 
 .logo {
-  width: 5.625rem;
+  width: 3rem;
 }
 
 .desktopNav {
@@ -287,10 +296,20 @@ header>div {
   color: var(--color-dark-gray);
 }
 
+@media (width >=461px) {
+  header {
+    top: 2.375rem;
+  }
+}
+
 @media (width >=660px) {
   header {
     top: 2.563rem;
     padding: 1.25rem 2.5rem;
+  }
+
+  .bh {
+    font-size: 0.625rem;
   }
 
   .logo {
@@ -307,6 +326,10 @@ header>div {
   header {
     top: 2.875rem;
     padding: 1.25rem 3.75rem;
+  }
+
+  .bh {
+    font-size: 0.75rem;
   }
 
   header>div {
@@ -373,7 +396,13 @@ header>div {
     top: 3.25rem;
   }
 
-  .categoriesButton, .dropdownContent ul li a {
+  .bh {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .categoriesButton,
+  .dropdownContent ul li a {
     font-size: 1.5rem;
   }
 }
