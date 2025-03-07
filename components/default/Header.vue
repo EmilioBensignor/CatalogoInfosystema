@@ -6,7 +6,7 @@
           <Icon size="1.5rem" name="mingcute:menu-line" />
         </button>
         <NuxtLink :to="routes.HOME">
-          <NuxtImg class="logo" src="/images/Logo-We-Glam.svg" alt="Logo Infosystema" />
+          <NuxtImg class="logo" src="/images/Logo-We-Glam.svg" alt="Logo We Glam" />
         </NuxtLink>
       </div>
       <div class="w-full searchContainer">

@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-black">
     <div class="w-full column">
-      <NuxtImg class="logo" src="/images/Logo-We-Glam.svg" alt="Logo Infosystema" />
+      <NuxtImg class="logo" src="/images/Logo-We-Glam.svg" alt="Logo We Glam" />
       <div class="w-full rowSpaceBetween">
         <ul class="column">
           <li v-for="(link, index) in menu" :key="index">
