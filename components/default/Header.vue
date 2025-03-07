@@ -296,7 +296,7 @@ header>div {
   color: var(--color-dark-gray);
 }
 
-@media (width >=461px) {
+@media (width >=561px) {
   header {
     top: 2.375rem;
   }
