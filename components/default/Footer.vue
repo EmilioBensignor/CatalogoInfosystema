@@ -44,9 +44,14 @@ export default {
           icon: "whatsapp-line",
         },
         {
-          label: "We Glam",
+          label: "We Glam - Ubicación",
           to: "https://maps.app.goo.gl/itCtFp6wpwuaCerBA",
           icon: "location-line",
+        },
+        {
+          label: "Lunes a Viernes - 10 a 18hs",
+          to: "https://maps.app.goo.gl/itCtFp6wpwuaCerBA",
+          icon: "alarm-2-line",
         },
       ],
     };
