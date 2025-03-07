@@ -39,8 +39,8 @@ export default {
       ],
       socialMedia: [
         {
-          label: "+54 9 11 5367 0523",
-          to: "https://wa.me/+5491153670523/?text=¡Hola! Estoy en el catálogo de We Glam Importadores y quiero pedir más información.",
+          label: "+54 9 11 5637 0523",
+          to: "https://wa.me/+5491156370523/?text=¡Hola! Estoy en el catálogo de We Glam Importadores y quiero pedir más información.",
           icon: "whatsapp-line",
         },
         {
@@ -49,7 +49,7 @@ export default {
           icon: "location-line",
         },
         {
-          label: "Lunes a Viernes - 10 a 18hs",
+          label: "Lunes a Viernes - 10 a 16hs",
           to: "https://maps.app.goo.gl/itCtFp6wpwuaCerBA",
           icon: "alarm-2-line",
         },
