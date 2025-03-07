@@ -36,9 +36,9 @@ export default defineNuxtConfig({
     }
   },
   site: {
-    url: 'https://infosystema.com.ar',
-    name: 'Catalogo Infosystema',
-    description: 'Catalogo Infosystema',
+    url: 'https://www.weglam.com.ar',
+    name: 'We Glam Importadores',
+    description: 'We Glam Importadores y distribuidores. Productos para el hogar, bazar, deco',
     defaultLocale: 'es',
   },
   booster: {

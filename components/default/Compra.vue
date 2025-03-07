@@ -3,7 +3,7 @@
         <ClientOnly>
             <p>Para ventas mayoristas a partir de $200.000 - <NuxtLink
                     to="https://wa.me/+5491156370523/?text=¡Hola! Estoy en el catálogo de We Glam Importadores y quiero pedir más información."
-                    class="minorista rowCenter no-underline text-black">
+                    class="minorista rowCenter no-underline">
                     <p>Ventas minoristas</p>
                     <Icon name="mingcute:whatsapp-line" />
                 </NuxtLink>

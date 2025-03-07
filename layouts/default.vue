@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="relative">
     <DefaultCompra />
     <DefaultHeader />
     <slot />
     <DefaultFooter />
     <DefaultRights />
+    <DefaultWhatsapp />
   </div>
 </template>
