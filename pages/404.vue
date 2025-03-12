@@ -13,6 +13,20 @@
 
 <script setup>
 import { ROUTE_NAMES } from '~/constants/ROUTE_NAMES';
+
+onMounted(() => {
+    if (process.server) {
+        const event = useRequestEvent()
+        setResponseStatus(event, 404)
+    }
+})
+
+useHead({
+    title: 'Página no encontrada | We Glam',
+    meta: [
+        { name: 'robots', content: 'noindex,follow' }
+    ]
+})
 </script>
 
 <style scoped>
