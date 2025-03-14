@@ -10,6 +10,8 @@
                 <div class="w-full columnAlignCenter">
                     <p class="w-full dialogBig font-bold">{{ producto?.titulo }}</p>
                     <p class="w-full">{{ producto?.descripcion }}</p>
+                    <p v-if="producto.cantidad_bulto" class="w-full">Cantidad por bulto: {{ producto.cantidad_bulto }}</p>
+                    <p v-if="producto.cantidad_minima" class="w-full">Cantidad mínima: {{ producto.cantidad_minima }}</p>
                     <div class="w-full rowSpaceBetween align-items-end">
                         <p class="dialogBig font-bold">
                             ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
