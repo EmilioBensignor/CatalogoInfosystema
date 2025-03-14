@@ -41,6 +41,7 @@
     .whatsappIcon {
         width: 5rem;
         height: 5rem;
+        top: 87vh;
         right: 3.75rem;
     }
 
