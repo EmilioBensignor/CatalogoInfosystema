@@ -1,13 +1,12 @@
 <template>
-    <!-- Dialog principal del producto -->
     <div>
         <Dialog :visible="visible" @update:visible="$emit('update:visible', $event)" modal :dismissableMask="true"
             class="dialogDetail">
             <div class="dialogBody columnAlignCenter">
-                <!-- Imagen con evento de clic para mostrar ampliada -->
                 <NuxtImg class="w-full cursor-pointer" :src="producto?.imagen" :alt="producto?.titulo"
                     @click="mostrarImagenAmpliada = true" />
                 <div class="w-full columnAlignCenter">
+                    <p class="w-full">{{ producto?.codigo }}</p>
                     <p class="w-full dialogBig font-bold">{{ producto?.titulo }}</p>
                     <p class="w-full">{{ producto?.descripcion }}</p>
                     <p v-if="producto.cantidad_bulto" class="w-full">Cantidad por bulto: {{ producto.cantidad_bulto }}</p>
@@ -22,7 +21,6 @@
             </div>
         </Dialog>
 
-        <!-- Dialog para mostrar la imagen ampliada -->
         <Dialog :visible="mostrarImagenAmpliada" @update:visible="mostrarImagenAmpliada = $event" modal
             :dismissableMask="true" class="imagenAmpliadaDialog">
             <div class="imagenAmpliadaContainer">

@@ -1,10 +1,12 @@
 <template>
-  <article :class="producto.promocion ? 'productoPromocion' : '' " class="producto columnAlignCenter bg-white shadow-3" @click="$emit('showDetail', producto)">
+  <article :class="producto.promocion ? 'productoPromocion' : ''" class="producto columnAlignCenter bg-white shadow-3"
+    @click="$emit('showDetail', producto)">
     <div v-if="producto.promocion" class="promocion bg-black">
       <p>{{ producto.promocion }}</p>
     </div>
     <div class="productoContent columnAlignCenter">
       <NuxtImg class="w-full" :src="producto.imagen" :alt="producto.titulo" />
+      <p class="w-full codigo">{{ producto.codigo }}</p>
       <p class="w-full">{{ producto.titulo }}</p>
       <div class="w-full rowSpaceBetween align-items-end">
         <p class="font-bold">
@@ -82,6 +84,10 @@ export default {
   font-size: 0.75rem;
 }
 
+.producto>div>.codigo {
+  font-size: 0.7rem;
+}
+
 @media (width >=350px) {
   .producto>div p:last-of-type {
     font-size: 0.875rem;
@@ -91,6 +97,10 @@ export default {
 @media (width >=380px) {
   .producto>div p:last-of-type {
     font-size: 1rem;
+  }
+
+  .producto>div>.codigo {
+    font-size: 0.75rem;
   }
 }
 
@@ -112,6 +122,10 @@ export default {
   .producto>div p,
   .producto>div p:last-of-type {
     font-size: 1.25rem;
+  }
+
+  .producto>div>.codigo {
+    font-size: 1rem;
   }
 
   .producto>p {
@@ -136,6 +150,10 @@ export default {
   .producto>div p,
   .producto>div p:last-of-type {
     font-size: 1.5rem;
+  }
+
+  .producto>div>.codigo {
+    font-size: 1.25rem;
   }
 }
 
