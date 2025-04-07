@@ -9,13 +9,15 @@
                     <p class="w-full">{{ producto?.codigo }}</p>
                     <p class="w-full dialogBig font-bold">{{ producto?.titulo }}</p>
                     <p class="w-full">{{ producto?.descripcion }}</p>
-                    <p v-if="producto.cantidad_bulto" class="w-full">Cantidad por bulto: {{ producto.cantidad_bulto }}</p>
-                    <p v-if="producto.cantidad_minima" class="w-full">Cantidad mínima: {{ producto.cantidad_minima }}</p>
-                    <div class="w-full rowSpaceBetween align-items-end">
+                    <p v-if="producto.cantidad_bulto" class="w-full">Cantidad por bulto: {{ producto.cantidad_bulto }}
+                    </p>
+                    <p v-if="producto.cantidad_minima" class="w-full">Cantidad mínima: {{ producto.cantidad_minima }}
+                    </p>
+                    <div class="w-full rowSpaceBetween align-items-center">
                         <p class="dialogBig font-bold">
                             ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
                         </p>
-                        <p class="dialogBig font-bold text-gray"><sup>+</sup>IVA</p>
+                        <p class="iva font-bold text-gray">IVA Incluído</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +52,7 @@ export default {
     },
     methods: {
         calculatePrice(dolarCost) {
-            return Math.round(dolarCost * this.store.DOLAR_WG * this.store.GANANCIA)
+            return Math.round(dolarCost * this.store.DOLAR_WG * this.store.GANANCIA * 1.21)
         }
     },
     emits: ['update:visible']
@@ -65,6 +67,10 @@ export default {
 
 .dialogBody .dialogBig {
     font-size: 1.5rem;
+}
+
+.iva {
+    font-size: 0.875rem;
 }
 
 /* Cursor pointer para indicar que la imagen es clicable */
@@ -90,6 +96,12 @@ export default {
     max-height: 90vh;
     max-width: 100%;
     object-fit: contain;
+}
+
+@media (width >=480px) {
+    .iva {
+        font-size: 1rem;
+    }
 }
 
 @media (width >=660px) {

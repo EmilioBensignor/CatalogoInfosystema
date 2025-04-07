@@ -8,11 +8,11 @@
       <NuxtImg class="w-full" :src="producto.imagen" :alt="producto.titulo" />
       <p class="w-full codigo">{{ producto.codigo }}</p>
       <p class="w-full">{{ producto.titulo }}</p>
-      <div class="w-full rowSpaceBetween align-items-end">
+      <div class="w-full rowSpaceBetween align-items-end flex-wrap">
         <p class="font-bold">
           ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
         </p>
-        <p class="font-bold text-gray"><sup>+</sup>IVA</p>
+        <p class="iva font-bold text-gray">IVA Incluído</p>
       </div>
     </div>
   </article>
@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     calculatePrice(dolarCost) {
-      return Math.round(dolarCost * this.store.DOLAR_WG * this.store.GANANCIA)
+      return Math.round(dolarCost * this.store.DOLAR_WG * this.store.GANANCIA * 1.21)
     }
   },
 }
@@ -88,15 +88,9 @@ export default {
   font-size: 0.7rem;
 }
 
-@media (width >=350px) {
-  .producto>div p:last-of-type {
-    font-size: 0.875rem;
-  }
-}
-
 @media (width >=380px) {
   .producto>div p:last-of-type {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 
   .producto>div>.codigo {
@@ -119,9 +113,12 @@ export default {
     padding: 1.25rem;
   }
 
-  .producto>div p,
-  .producto>div p:last-of-type {
+  .producto>div p {
     font-size: 1.25rem;
+  }
+
+  .producto>div p:last-of-type {
+    font-size: 1rem;
   }
 
   .producto>div>.codigo {
@@ -147,9 +144,12 @@ export default {
     max-width: 170px;
   }
 
-  .producto>div p,
-  .producto>div p:last-of-type {
+  .producto>div p {
     font-size: 1.5rem;
+  }
+
+  .producto>div p:last-of-type {
+    font-size: 1.25rem;
   }
 
   .producto>div>.codigo {

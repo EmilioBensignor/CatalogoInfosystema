@@ -231,7 +231,7 @@ export default {
 <style scoped>
 header {
   position: sticky;
-  top: 3.75rem;
+  top: 4.875rem;
   z-index: 10;
   padding: 1.25rem;
 }
@@ -294,6 +294,12 @@ header>div {
   top: 50%;
   transform: translateY(-50%);
   color: var(--color-dark-gray);
+}
+
+@media (width >=338px) {
+  header {
+    top: 3.75rem;
+  }
 }
 
 @media (width >=561px) {
