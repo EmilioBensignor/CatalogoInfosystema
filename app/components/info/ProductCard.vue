@@ -33,7 +33,8 @@ export default {
   },
   methods: {
     calculatePrice(dolarCost) {
-      return Math.round(dolarCost * this.store.DOLAR_WG * this.store.GANANCIA * 1.21)
+      const markup = this.producto.indice_markup || this.store.GANANCIA
+      return Math.round(dolarCost * this.store.DOLAR_WG * markup * 1.21)
     }
   },
 }

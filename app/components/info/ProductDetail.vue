@@ -47,12 +47,13 @@ export default {
     data() {
         return {
             store: useVariablesStore(),
-            mostrarImagenAmpliada: false, // Estado para controlar el diálogo de imagen ampliada
+            mostrarImagenAmpliada: false,
         }
     },
     methods: {
         calculatePrice(dolarCost) {
-            return Math.round(dolarCost * this.store.DOLAR_WG * this.store.GANANCIA * 1.21)
+            const markup = this.producto.indice_markup || this.store.GANANCIA
+            return Math.round(dolarCost * this.store.DOLAR_WG * markup * 1.21)
         }
     },
     emits: ['update:visible']
