@@ -141,8 +141,10 @@ export default {
     font-size: 1rem !important;
   }
 
-  .producto>img {
+  .producto img {
     max-width: 170px;
+    max-height: 170px;
+    object-fit: contain;
   }
 
   .producto>div p {
