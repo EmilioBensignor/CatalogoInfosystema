@@ -1,5 +1,5 @@
-export const banners = {
-    tender: {
+export const banners = [
+    {
         xs: "tender-vertical-we-glam-xs",
         s: "tender-vertical-we-glam-s",
         m: "tender-vertical-we-glam-m",
@@ -7,7 +7,7 @@ export const banners = {
         xl: "tender-vertical-we-glam-xl",
         alt: "Tender vertical We Glam"
     },
-    secaplato: {
+    {
         xs: "secaplatos-escurridor-we-glam-xs",
         s: "secaplatos-escurridor-we-glam-s",
         m: "secaplatos-escurridor-we-glam-m",
@@ -15,7 +15,7 @@ export const banners = {
         xl: "secaplatos-escurridor-we-glam-xl",
         alt: "Secaplatos escurridor We Glam"
     },
-    carro: {
+    {
         xs: "carro-zorra-we-glam-xs",
         s: "carro-zorra-we-glam-s",
         m: "carro-zorra-we-glam-m",
@@ -23,4 +23,4 @@ export const banners = {
         xl: "carro-zorra-we-glam-xl",
         alt: "Carro zorra We Glam"
     },
-};
+];

@@ -4,16 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/main.css"],
   modules: [
-    "@primevue/nuxt-module",
     "@nuxt/image",
     "@nuxt/icon",
     "@nuxtjs/seo",
-    "nuxt-vitalizer",
-    'nuxt-booster',
-    '@nuxtjs/fontaine',
     'nuxt-anchorscroll',
-    '@nuxt/scripts',
-    'nuxt-swiper',
     '@nuxtjs/supabase',
     '@pinia/nuxt'
   ],
@@ -54,23 +48,6 @@ export default defineNuxtConfig({
     description: 'We Glam Importadores y distribuidores. Productos para el hogar, bazar, deco',
     defaultLocale: 'es',
   },
-  booster: {
-    detection: {
-      performance: true,
-      browserSupport: true,
-      battery: true
-    },
-    performanceMetrics: {
-      timing: {
-        fcp: 800,
-        dcl: 1200
-      }
-    },
-    lazyOffset: {
-      component: '0%',
-      asset: '0%'
-    }
-  },
   image: {
     screens: {
       default: 320,
@@ -88,10 +65,6 @@ export default defineNuxtConfig({
       youtube: 'https://img.youtube.com',
       vimeo: 'https://i.vimeocdn.com',
     }
-  },
-  vitalizer: {
-    disableStylesheets: 'entry',
-    disablePrefetchLinks: true
   },
   imports: {
     dirs: ['store']
