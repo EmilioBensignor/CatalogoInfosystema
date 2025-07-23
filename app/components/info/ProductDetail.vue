@@ -13,10 +13,15 @@
                     </p>
                     <p v-if="producto.cantidad_minima" class="w-full">Cantidad mínima: {{ producto.cantidad_minima }}
                     </p>
-                    <div class="w-full rowSpaceBetween align-items-center">
-                        <p class="dialogBig font-bold">
-                            ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
-                        </p>
+                    <div class="w-full conIva rowSpaceBetween">
+                        <div class="precio-container">
+                            <p v-if="producto.promocion" class="precio-original font-bold text-gray">
+                                ${{ calculateOriginalPrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
+                            </p>
+                            <p class="dialogBig font-bold">
+                                ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
+                            </p>
+                        </div>
                         <p class="iva font-bold text-gray">IVA Incluído</p>
                     </div>
                 </div>
@@ -51,9 +56,19 @@ export default {
         }
     },
     methods: {
-        calculatePrice(dolarCost) {
+        calculateOriginalPrice(dolarCost) {
             const markup = this.producto.indice_markup || this.store.GANANCIA
             return Math.round(dolarCost * this.store.DOLAR_WG * markup * 1.21)
+        },
+        calculatePrice(dolarCost) {
+            const markup = this.producto.indice_markup || this.store.GANANCIA
+            let price = dolarCost * this.store.DOLAR_WG * markup
+            
+            if (this.producto.promocion) {
+                price = price * (1 - this.producto.promocion / 100)
+            }
+            
+            return Math.round(price * 1.21)
         }
     },
     emits: ['update:visible']
@@ -68,10 +83,27 @@ export default {
 
 .dialogBody .dialogBig {
     font-size: 1.5rem;
+    line-height: 1;
 }
 
 .iva {
     font-size: 0.875rem;
+}
+
+.conIva {
+    align-items: flex-end;
+}
+
+.precio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.precio-original {
+    text-decoration: line-through;
+    font-size: 0.8em !important;
+    margin-bottom: 0.2rem;
 }
 
 /* Cursor pointer para indicar que la imagen es clicable */

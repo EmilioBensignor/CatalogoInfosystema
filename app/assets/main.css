@@ -253,6 +253,17 @@ a {
     width: 1.25rem;
     height: 1.25rem;
   }
+
+  .productosContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (width >=1280px) {
+  .productosContainer {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 @media (width >=1440px) {

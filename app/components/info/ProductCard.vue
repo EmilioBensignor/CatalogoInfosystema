@@ -2,16 +2,21 @@
   <article :class="producto.promocion ? 'productoPromocion' : ''" class="producto columnAlignCenter bg-white shadow-3"
     @click="$emit('showDetail', producto)">
     <div v-if="producto.promocion" class="promocion bg-black">
-      <p>{{ producto.promocion }}</p>
+      <p>{{ producto.promocion }}% de descuento</p>
     </div>
     <div class="productoContent columnAlignCenter">
       <NuxtImg class="w-full" :src="producto.imagen" :alt="producto.titulo" />
       <p class="w-full codigo">{{ producto.codigo }}</p>
       <p class="w-full">{{ producto.titulo }}</p>
-      <div class="w-full rowSpaceBetween align-items-end flex-wrap">
-        <p class="font-bold">
-          ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
-        </p>
+      <div class="w-full rowSpaceBetween align-items-end flex-wrap gap-2">
+        <div class="precio-container">
+          <p v-if="producto.promocion" class="precio-original font-bold text-gray">
+            ${{ calculateOriginalPrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
+          </p>
+          <p class="font-bold">
+            ${{ calculatePrice(producto.costo_dolar).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") }}
+          </p>
+        </div>
         <p class="iva font-bold text-gray">IVA Incluído</p>
       </div>
     </div>
@@ -32,9 +37,19 @@ export default {
     }
   },
   methods: {
-    calculatePrice(dolarCost) {
+    calculateOriginalPrice(dolarCost) {
       const markup = this.producto.indice_markup || this.store.GANANCIA
       return Math.round(dolarCost * this.store.DOLAR_WG * markup * 1.21)
+    },
+    calculatePrice(dolarCost) {
+      const markup = this.producto.indice_markup || this.store.GANANCIA
+      let price = dolarCost * this.store.DOLAR_WG * markup
+      
+      if (this.producto.promocion) {
+        price = price * (1 - this.producto.promocion / 100)
+      }
+      
+      return Math.round(price * 1.21)
     }
   },
 }
@@ -67,6 +82,18 @@ export default {
 .productoContent {
   gap: 0.625rem;
   padding: 0.625rem;
+}
+
+.precio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.precio-original {
+  text-decoration: line-through;
+  font-size: 0.8em !important;
+  margin-bottom: 0.2rem;
 }
 
 .producto>img {
@@ -133,8 +160,8 @@ export default {
 
 @media (width >=1080px) {
   .producto {
-    width: 23.25%;
-    max-width: 225px;
+    max-width: 100%;
+    width: 100%;
   }
 
   .promocion p {
@@ -161,11 +188,6 @@ export default {
 }
 
 @media (width >=1440px) {
-  .producto {
-    width: 25%;
-    max-width: 235px;
-  }
-
   .promocion p {
     font-size: 1.25rem !important;
   }
